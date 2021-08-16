@@ -1,8 +1,8 @@
 <?php
-	$dbhost='localhost';
-	$username='root';
-	$password='';
-	$dbselect="foodkrafts";
+	$dbhost='remotemysql.com';
+	$username='XZpIP1YSCx';
+	$password='wAf9woxPjB';
+	$dbselect="XZpIP1YSCx";
 	$con=mysqli_connect($dbhost,$username,$password,$dbselect);
 	
 	if ($con)
