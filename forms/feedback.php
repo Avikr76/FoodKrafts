@@ -1,11 +1,10 @@
 <?php
 $name = $_POST['name'];
 $email = $_POST['email'];
-$phone = $_POST['phone'];
+$subject = $_POST['subject'];
 $message = $_POST['message'];
 
-
-if(!empty($name) || !empty($email) || !empty($phone) || !empty($message))
+if(!empty($name) || !empty($email) || !empty($subject) || !empty($message))
 {	
 	$dbhost = 'localhost';
 	$username = 'root';
@@ -17,9 +16,8 @@ if(!empty($name) || !empty($email) || !empty($phone) || !empty($message))
 	if(mysqli_connect_error()) {
 		die('Connect Error('. mysqli_connect_errno().')'.mysqli_connect_error());
 	} else {
-
-		$SELECT = "SELECT email From shared_receipe Where email = ? Limit 1";
-		$INSERT = "INSERT into shared_receipe (name, email, phone, message) values(?, ?, ?, ?)";
+		$SELECT = "SELECT email From feedback Where email = ? Limit 1";
+		$INSERT = "INSERT into feedback (name, email, subject, message) values(?, ?, ?, ?)";
 
 		$stmt = $conn->prepare($SELECT);
 		$stmt->bind_param("s", $email);
@@ -31,9 +29,9 @@ if(!empty($name) || !empty($email) || !empty($phone) || !empty($message))
 	   	   $stmt->close();
 
 		   $stmt = $conn->prepare($INSERT);
-		   $stmt->bind_param("ssis", $name, $email, $phone, $message);
+		   $stmt->bind_param("ssss", $name, $email, $subject, $message);
 		   $stmt->execute();
-		   echo " Your Receipe is submitted";
+		   echo " Your Feedback is submitted";
 		} else {
 			echo "Somebody already submitted with this email";
 		}
