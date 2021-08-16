@@ -6,10 +6,10 @@ $message = $_POST['message'];
 
 if(!empty($name) || !empty($email) || !empty($subject) || !empty($message))
 {	
-	$dbhost = 'localhost';
-	$username = 'root';
-	$password = '';
-	$dbselect = "foodkrafts";
+	$dbhost = 'remotemysql.com';
+	$username = 'XZpIP1YSCx';
+	$password = 'wAf9woxPjB';
+	$dbselect = "XZpIP1YSCx";
 	
 	$conn = new mysqli($dbhost, $username, $password, $dbselect );
 
