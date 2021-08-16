@@ -18,7 +18,7 @@
      //execute SQL statement 
      
 	if (!$result)     
-		die("Database access failed: " . mysqli_error()); 
+		die("Database access failed: " . mysqli_connect_error()); 
     	//output error message if query execution failed 
         
 		$rows = mysqli_num_rows($result); 

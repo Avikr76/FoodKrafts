@@ -1,8 +1,8 @@
 <?php
-	$dbhost='remotemysql.com';
-	$username='XZpIP1YSCx';
-	$password='wAf9woxPjB';
-	$dbselect="XZpIP1YSCx";
+	$dbhost='localhost';
+	$username='root';
+	$password='';
+	$dbselect="foodkrafts";
 	$con=mysqli_connect($dbhost,$username,$password,$dbselect);
 	
 	if ($con)
@@ -18,7 +18,7 @@
      //execute SQL statement 
      
 	if (!$result)     
-		die("Database access failed: " . mysqli_error()); 
+		die("Database access failed: " . mysqli_connect_error()); 
     	//output error message if query execution failed 
         
 		$rows = mysqli_num_rows($result); 
